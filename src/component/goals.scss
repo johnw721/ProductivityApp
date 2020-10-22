@@ -1,0 +1,120 @@
+$partgap: 25px;
+
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 70%;
+    margin:auto;
+    border: 1px solid black;
+    border-radius: 25px 25px 25px 25px;
+    background-color: #CDAB8B;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    .TopContainer{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        .toTheLeft{
+         margin-top: 10px;
+         margin-left: 5px;
+         text-shadow: 1px, 4px, 4, rgba(0,0,0,0.25);
+         color:#FEF8F8;
+         font-family: Ropa Sans;
+         font-size: large;
+        }
+        .Goal{
+            margin-top: 1.5rem;
+            margin-left: 2.5rem;
+            border:none;
+            outline:none;
+            text-align-last: center;
+            align-self:flex-end;
+            justify-self: center;
+            background-color: rgba(0,0,0,0);
+            color: black;
+        }
+        input, input::placeholder {
+            text-align: right; 
+            color: black;
+            font-size: large;
+        }
+        
+        input:focus {
+            text-align: center; 
+            color:black;
+        }
+        .toTheRight{
+            background-color: rgba(0,0,0,0);
+            border-width: 0px;
+            div{
+                border-radius: 50%;
+                margin: 10px 5px;
+                height: 1rem;
+                width: 1rem;
+                background-color: #FCF4F4;;
+                display: inline-block;
+              }
+        }
+    }
+    .MiddleContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        margin-bottom: 25px;
+        .Timer{
+            background-color: rgba(0,0,0,0);
+            border-width: 0px;
+        }
+    }
+    .BottomContainer{
+        .inline{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-bottom: 25px;
+        }
+        .check{
+            position: relative;
+            display: block;
+            input[type=checkbox]{
+                visibility: hidden;
+            }
+            /*input:active ~ .custom { 
+                background-color: red; 
+            }*/
+            input:checked ~ .custom { 
+                background-color:  rgb(11, 166, 228); 
+            } 
+            input:checked ~ .custom:after { 
+                display: block; 
+            } 
+            .custom{
+                position: absolute;
+                top:0px;
+                left:0px;
+                height: 1.5rem;
+                width:1.5rem;
+                background-color:#CEE1E1;
+            }
+            .custom:after {
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                transform: rotate(45deg);
+              }
+        }
+        .check:hover input ~ .custom { 
+            background-color: rgb(11, 166, 228); 
+        } 
+        .custom:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    }
+}

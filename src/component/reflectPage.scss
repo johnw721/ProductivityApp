@@ -1,0 +1,15 @@
+.reflect{
+    display: grid;
+    margin:auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    max-width:50%;
+    textarea{
+        background: conic-gradient(from 25deg at 52.37% 100%, rgba(70, 167, 149, 0.75) 0deg, rgba(249, 254, 254, 0.62) 360deg);
+        border-radius: 15px;
+
+        :focus{
+            border-width:0;
+        }
+    }
+}
