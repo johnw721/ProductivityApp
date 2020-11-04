@@ -1,6 +1,7 @@
 import React from 'react';
 import Goals from './component/goals';
 import ReflectJournal from './component/reflectJournal'
+import Modal from './component/modal/modal'
 
 import './App.scss';
 
@@ -10,6 +11,7 @@ class App extends React.Component{
         <div className='App'>
           <Goals/>
           <ReflectJournal/>
+          <Modal/>
         </div>
     )
   }

@@ -7,21 +7,30 @@ import './goals.scss'
 
 export default class Goals extends Component {
 
-    state={showModal:false};
+    state={
+        Habit:'',
+        showModal:false,
+        Timer: Number,
+        reflection:Number
+    };
 
-    handleShowMessage(){
+   /* handleShowMessage(){
         this.setState({showModal:true})
     }
 
     handleCloseMessage(){
         this.setState({showModal:false})
     }
-
+*/
     render() {
         return (
             <div className='container'>
                 <div className='TopContainer'>
-                    <p className='toTheLeft'>S</p>
+                    <button className='toTheLeft'>
+                        <h3>
+                            S
+                        </h3>
+                    </button>
                     <input type='text' className='Goal' placeholder='Habit Title'/>
                     <button className='toTheRight'>
                         <div/>
@@ -35,12 +44,12 @@ export default class Goals extends Component {
                             Timer
                         </button>
                     </div>
-                    <div className='Reflect'>
+                    <button className='Reflect'>
                         Reflect
-                    </div>
-                    <div className='Frequencyform'>
+                    </button>
+                    <button className='Frequencyform'>
                         Frequency
-                    </div>
+                    </button>
                 </div>
                 <div className='BottomContainer'>
                     <div className='inline'>

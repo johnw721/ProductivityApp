@@ -11,18 +11,27 @@ $partgap: 25px;
     background-color: #CDAB8B;
     margin-top: 1.5rem;
     flex-wrap: wrap;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
     .TopContainer{
         display:flex;
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 25px;
         .toTheLeft{
-         margin-top: 10px;
-         margin-left: 5px;
-         text-shadow: 1px, 4px, 4, rgba(0,0,0,0.25);
-         color:#FEF8F8;
-         font-family: Ropa Sans;
-         font-size: large;
+            margin: 10px 5px;
+            border-width: 0px;
+            background-color: rgba(0,0,0,0);
+        h3{
+            font-weight: 500;
+            /*font-family: Ropa Sans;*/
+            background: linear-gradient(to top right, grey,white);
+            background-clip: text;
+            color:transparent;
+            font-size: x-large;
+        }
+        }
+        .toTheLeft:focus{
+            outline: none;
         }
         .Goal{
             margin-top: 1.5rem;
@@ -53,9 +62,12 @@ $partgap: 25px;
                 margin: 10px 5px;
                 height: 1rem;
                 width: 1rem;
-                background-color: #FCF4F4;;
+                background:linear-gradient(to top right, grey,white,grey);
                 display: inline-block;
               }
+        }
+        .toTheRight:focus{
+            outline: none;
         }
     }
     .MiddleContainer{
@@ -66,6 +78,23 @@ $partgap: 25px;
         .Timer{
             background-color: rgba(0,0,0,0);
             border-width: 0px;
+        }
+        .Timer:focus{
+            outline: none;
+        }
+        .Reflect{
+            background-color: rgba(0,0,0,0);
+            border-width: 0px;
+        }
+        .Reflect:focus{
+            outline: none;
+        }
+        .Frequencyform{
+            background-color: rgba(0,0,0,0);
+            border-width: 0px;
+        }
+        .Frequencyform:focus{
+            outline: none;
         }
     }
     .BottomContainer{
@@ -115,6 +144,14 @@ $partgap: 25px;
             content: "";
             position: absolute;
             display: none;
+        }
+    }
+}
+
+@media only screen and (max-width:600px){
+    .toTheRight{
+        div{
+            display: list-item;
         }
     }
 }
