@@ -1,0 +1,110 @@
+$blackBot: 1px solid black;
+$borderR1:0px 0px 0px 8px;
+$borderR2:8px 0px 0px 0px;
+$clear:rgba(0,0,0,0);
+$h2:2rem;
+$inline:inline-block;
+$mid:middle;
+$n:none;
+
+//
+.SideModal{
+    background-color: $clear;
+    border-left: 0px;
+    position: absolute;
+    bottom: 52vh;
+    display:grid;
+    flex-direction: column;
+    .topCurve{
+        position: relative;
+        top:0.19rem;
+        background-color: #328B86;
+        border-radius:$borderR1;
+        width: 100%;
+        height: $h2;
+    }
+    .topCurve::before{
+        width: 2.7rem;
+        height:$h2;
+        background-color:$clear;
+        display:$inline;
+        vertical-align:$mid;
+        border-radius:$borderR1;
+        content: '';
+        border-bottom: $blackBot;
+    }
+    .tab{
+        border-radius: 5px 18px 18px 5px;
+        background-color: #c59f7b;
+        margin: auto;
+        border: $blackBot;
+        border-left: 0px;
+        height: 5rem;
+        max-width: 3.2rem;
+        box-shadow: 4px 2px 2px rgba(0, 0, 0, 0.25);
+        p{
+            transform: rotate(90deg) translate(0px,-8px);
+            font-size: medium;
+            font-weight: 525;
+        }
+    }
+    .tab:focus{
+        outline:$n;
+    }
+    .bottomCurve{
+        position: relative;
+        background-color:#328B86; ;
+        border-radius:$borderR2;
+        width: 100%;
+        height: $h2;
+        bottom: .3rem;
+    }
+    .bottomCurve::before{
+        width:2.8rem;
+        height:$h2;
+        background-color:$clear;
+        display:$inline;
+        vertical-align:$mid;
+        content: '';
+        border-radius:$borderR2;
+        border-top: $blackBot;
+    }
+}
+
+.ListRender{
+    position:fixed;
+    font-family: sans-serif;
+    width:15%;
+    top:50%;
+    animation: slideAcross 1s ease-in forwards;
+    @keyframes slideAcross{
+        0%{
+            width:0%;
+        }
+        100%{
+            width:15%;
+        }
+    }
+    .flex-container {
+      display: flex;
+      align-content: space-evenly;
+      background-color: #c59f7b;
+      flex-wrap:wrap;
+      .flex-child {
+        flex: 1;
+        text-align:center;
+        padding:5px;
+        border-bottom: 1px solid black;
+        .del{
+          border-radius: 25px;
+          border-width: 0px;
+          background-color: rgba(0,0,0,0)
+        }.addOn{
+          color:white;
+          font-size:large;
+          font-weight: 600;
+          border-width:0px;
+        }
+    }  
+  }
+  }

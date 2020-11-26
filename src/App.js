@@ -3,7 +3,7 @@ import Goals from './component/goals';
 import ReflectJournal from './component/reflectJournal'
 import Modal from './component/modal/modal'
 
-import './App.scss';
+import './style/App.scss';
 
 class App extends React.Component{
   render(){

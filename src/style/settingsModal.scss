@@ -1,0 +1,52 @@
+$blackBot: 1px solid black;
+$c:center;
+$inline:inline-block;
+
+.Settings{
+    display:flex;
+    position:absolute;
+    width:100%;
+    height:180%;
+    top:0;
+    bottom:0;
+    justify-content:$c;
+    align-items: $c;
+    background-color:rgba(0,0,0,0.3);
+    .mainContainer{
+        display:flex;
+        flex-direction: column;
+        text-align: $c;
+        font-size: large;
+        border-radius: 10px;
+        position: relative;
+        justify-self:$c;
+        width:40%;
+        height: 40%;
+        animation: slideDown ease-in 1.5s forwards;
+        @keyframes slideDown{
+            0%{
+                top:-20;
+            }
+            50%{
+                top:15;
+            }
+            100%{
+                top:50;
+            }
+        }
+        }
+        input{
+            outline:none;
+            border:none;
+            border-bottom:$blackBot;
+        }
+        .addTime{
+            display:$inline;
+        }
+    }
+    .Exit{
+        background-color: red;
+        color:white;
+        border-radius: 20px;
+        border-width:0px;
+    }

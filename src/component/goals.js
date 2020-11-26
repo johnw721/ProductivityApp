@@ -1,11 +1,10 @@
 import React, { Component} from 'react'
-
-import './goals.scss'
-
+//stylesheet
+import '../style/goals.scss'
+//components
 import SettingsModal from '../component/modal/settingsModal'
-
-
-
+//actions
+import {setType} from '../redux/actions/index';
 
 export default class Goals extends Component {
     
@@ -25,8 +24,8 @@ SettingsOpen = (Event) => {
     this.setState({Type:Event.target.innerText},()=>{
         console.log(this.state.Type)
     })
-    /*Event.target.innerText*/
-    console.log(this.state.Type)
+    /*Call setType*/
+    setType(Event)
   };
  
 SettingsClose =()=> {
@@ -39,67 +38,11 @@ clickMethod =(event)=> {
 console.log(`this button for ${event.target.value} has been pressed `)
 };
 
-renderSettings=()=>{
-    var value = this.state.Type
-    if(value === 'Time'){
-        return(
-        <div>
-            <div>
-                Hour
-            </div>
-            <div>
-                Minute
-            </div>
-            <div>
-                Seconds
-            </div>
-        </div>
-        )
-    }else if(value ==='S'){
-        return(
-            <div>
-                <div>
-                    Add Stage
-                </div>
-            </div>
-        )
-    }else if(value === 'Reflect'){
-        return(
-            <div>
-                <div>
-                    Previous Date
-                </div>
-            </div>
-        )
-    }else if(value === 'Frequency'){
-        return(
-            <div>
-                <div>
-                    What time on Days Selected
-                </div>
-            </div>
-        )
-    }else if(value === ''){
-        return(
-            <div>
-                <div>
-                    YouTube
-                </div>
-                <div>
-                    Camera
-                </div>
-                <div>
-                    Spotify
-                </div>
-            </div>
-        )
-    }
-}
 
     render() {
         return (
             <div className='container'>
-                {this.state.showModal ? (<SettingsModal RenderSettings={this.renderSettings()} closeModal={this.SettingsClose}/>):null}
+                {this.state.showModal ? (<SettingsModal closeModal={this.SettingsClose}/>):null}
                 <div className='TopContainer'>
                     <button className='toTheLeft' name='Stage' onClick={this.SettingsOpen}>
                         <h3>

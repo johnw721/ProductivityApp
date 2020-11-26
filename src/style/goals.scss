@@ -1,4 +1,22 @@
-$partgap: 25px;
+$backgrBlue:rgb(11, 166, 228);
+$blackBot: 1px solid black;
+$c:center;
+$clear:rgba(0,0,0,0);
+$n:none;
+
+@mixin pm0{
+    padding:0;
+    margin:0; 
+ }
+
+ @mixin fcs{
+     outline:$n
+ }
+ 
+ @mixin active{
+     outline:$n;
+     animation:buttonActive 0.4s linear;
+ }
 
 .container{
     display:flex;
@@ -6,7 +24,7 @@ $partgap: 25px;
     justify-content: space-evenly;
     width: 70%;
     margin:auto;
-    border: 1px solid black;
+    border:$blackBot;
     border-radius: 25px 25px 25px 25px;
     background-color: #CDAB8B;
     margin-top: 1.5rem;
@@ -20,7 +38,7 @@ $partgap: 25px;
         .toTheLeft{
             margin: 10px 5px;
             border-width: 0px;
-            background-color: rgba(0,0,0,0);
+            background-color: $clear;
             max-height: fit-content;
             border-radius: 50px;
         h3{
@@ -30,31 +48,29 @@ $partgap: 25px;
             color:transparent;
             font-size: x-large;
             border-radius: 50px;
-            padding:0;
-            margin:0;
+           @include pm0;
         }
         }
         .toTheLeft:active{
-            outline: none;
-            animation:buttonActive 0.4s linear;
+            @include active;
             @keyframes buttonActive {
-                0%{outline: none; background-color: rgba(0,0,0,0);}
-                50%{outline:none; background-color: rgba(158, 88, 23, 0.705);}
-                100%{outline:none; background-color: rgba(0,0,0,0);}
+                0%{outline: $n; background-color:$clear}
+                50%{outline:$n; background-color: rgba(158, 88, 23, 0.705);}
+                100%{outline:$n; background-color: $clear;}
             }
         }
         .toTheLeft:focus{
-            outline:none;
+            @include fcs;
         }
         .Goal{
             margin-top: 1.5rem;
             margin-left: 2.5rem;
-            border:none;
-            outline:none;
-            text-align-last: center;
+            border:$n;
+            outline:$n;
+            text-align-last:$c;
             align-self:flex-end;
-            justify-self: center;
-            background-color: rgba(0,0,0,0);
+            justify-self:$c;
+            background-color: $clear;
             color: black;
         }
         input, input::placeholder {
@@ -64,11 +80,11 @@ $partgap: 25px;
         }
         
         input:focus {
-            text-align: center; 
+            text-align:$c; 
             color:black;
         }
         .toTheRight{
-            background-color: rgba(0,0,0,0);
+            background-color: $clear;
             border-width: 0px;
             border-radius: 50px;
             margin: 9px 0px 9px;
@@ -83,11 +99,10 @@ $partgap: 25px;
               }
         }
         .toTheRight:focus{
-            outline: none;
+            @include fcs;
         }
         .toTheRight:active{
-            outline: none;
-            animation:buttonActive 0.4s linear;
+            @include active;
         }
     }
     .MiddleContainer{
@@ -96,52 +111,46 @@ $partgap: 25px;
         justify-content:space-around;
         margin-bottom: 25px;
         .Timer{
-            background-color: rgba(0,0,0,0);
+            background-color:$clear;
             border-width: 0px;
             border-radius: 30px;
             p{
-                padding:0;
-                margin:0;
+                @include pm0;
             }
         }
         .Timer:focus{
-            outline: none;
+            @include fcs;
         }
         .Timer:active{
-            outline: none;
-            animation:buttonActive 0.4s linear;
+            @include active;
         }
         .Reflect{
-            background-color: rgba(0,0,0,0);
+            background-color: $clear;
             border-width: 0px;
             border-radius: 30px;
             p{
-                padding:0;
-                margin:0;
+                 @include pm0;
             }
         }
         .Reflect:focus{
-            outline: none;
+            @include fcs;
         }
         .Reflect:active{
-            outline: none;
-            animation:buttonActive 0.4s linear;
+            @include active;
         }
         .Frequencyform{
-            background-color: rgba(0,0,0,0);
+            background-color: $clear;
             border-width: 0px;
             border-radius: 30px;
             p{
-                padding:0;
-                margin:0;
+               @include pm0;
             }
         }
         .Frequencyform:focus{
-            outline: none;
+            @include fcs;
         }
         .Frequencyform:active{
-            outline: none;
-            animation:buttonActive 0.4s linear;
+            @include active;
         }
     }
     .BottomContainer{
@@ -161,7 +170,7 @@ $partgap: 25px;
                 background-color: red; 
             }*/
             input:checked ~ .custom { 
-                background-color:  rgb(11, 166, 228); 
+                background-color:$backgrBlue; 
             } 
             input:checked ~ .custom:after { 
                 display: block; 
@@ -185,12 +194,12 @@ $partgap: 25px;
               }
         }
         .check:hover input ~ .custom { 
-            background-color: rgb(11, 166, 228); 
+            background-color:$backgrBlue; 
         } 
         .custom:after {
             content: "";
             position: absolute;
-            display: none;
+            display:$n;
         }
     }
 }

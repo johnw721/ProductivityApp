@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import './reflectPage.scss'
+import '../style/reflectPage.scss'
 
 export default class ReflectJournal extends Component {
     render() {

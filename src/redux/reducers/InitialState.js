@@ -1,9 +1,8 @@
-import * as actions from './actionsType'
-
 const InitialState=[
     {id:Number,
     title:String,
     totalTime:Number,
+    Settings:'',
     stages:[
         {
             id:Number,
@@ -25,22 +24,14 @@ support:{
     Camera: false,
     Spotify: false
     },
-text:{
+text:[{
     /*date](//date) of entry serves as Id*/
     date:Number,
     /* written on the day of */
     content:String,
     /* things written after the initial date */
     reflection:String
-    }
+    }]
 }]
 
-export default function reducer (state=InitialState,action){
-    switch (action.type) {
-        case actions.ADDED_TIME:
-            return state.filter(id=>id);
-    
-        default:
-            return state;
-    }
-}
+export default InitialState;
